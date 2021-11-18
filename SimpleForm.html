@@ -1,0 +1,96 @@
+<!DOCTYPE>
+<html>
+<head>    
+<meta charset="urf =8">
+<meta name="viewport" content="width=device">
+<title>Basic Input Type </title>
+<link rel="Stylesheet" href="SimpleForm.css">
+
+</head>
+
+<body>
+    <form>
+        <header class="headerContainer"><h1> HTML 5 form Input Field</h1></header>
+        <div style="text-align: center;">
+            <label for ="text"> Text input type for Name: </label>
+            <input type="text" id="text" name="text">
+            <error-output class="text-error" for="text"></error-output>
+        </div>
+        
+        <br>
+        <div style="text-align: center;">
+            <label for="pwd">Password input type:</label>
+            <input type="password" id= "pwwd" name="pwd">
+        </div>
+        
+        <br>
+        <div style="text-align: center;">
+            <label for="email"> Email input type</label>
+            <input type="email" id="email" name="email">
+        </div>
+        
+        <br>
+        <div style="text-align: center;">
+            <label for "number"> Number input type</label>
+            <input type="number" id="number" name="number">
+        </div>
+
+        <br>
+        <div style="text-align: center;">
+            <label for "tel"> telephone number input type</label>
+            <input type="tel" id="tel" name="tel">
+        </div>
+
+        <br>
+        <div style="text-align: center;">
+            <label for "search"> Search input type</label>
+            <input type="search" id="search" name="search" placeholder="Search the Name"> 
+        </div>
+
+        <br>
+        <div style="text-align: center;">
+            <label for "party"> Choose a Date And Time</label>
+            <input type="datetime-local" id="party" name="Birthday">
+        </div>
+
+        <br>
+        <div style="text-align: center;">
+            <label for "salary"> Choose your Salary</label>
+            <input type="range" id="salary" name="salary">
+        </div>
+
+        <br>
+        <div style="text-align: center;">
+            <label for "radiobutton"> Choose your Salary</label>
+            <input type="radio" id="HTML" name="choices">
+            <Label for="HTML">html</Label>
+            <input type="radio" id="CSS" name="choices">
+            <Label for="CSS">CSS</Label>
+            <input type="radio" id="JavaScript" name="choices">
+            <Label for="JavaScript">JavaScript</Label>
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <button href="https://www.google.com/" >Submit</button>
+        </div>
+        
+        
+
+    </form>
+
+    <script>
+        const text = document.querySelector('#text');
+        
+        const textError=document.querySelector('.text-error');
+        text.addEventListener('input',function() {
+            console.log(text.value);
+            let nameRegex=RegExp('^[A-Z]{1}[a-z]{3}$');
+            if(nameRegex.test(text.value))
+                textError.textContent="";
+                else textError.textContent="Name is incorrect";
+            
+        })
+    </script>
+</body>
+
+</html>
